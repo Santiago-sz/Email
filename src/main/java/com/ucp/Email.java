@@ -7,14 +7,14 @@ public class Email {
     private String asunto = "";
     private String contenido = "";
     private Contacto remitente;
-    private List<String> destinatarios;
+    private List<Contacto> Para;
 
 
-    public Email(String asunto, String contenido, Contacto remitente, List<String> destinatarios) {
+    public Email(String asunto, String contenido, Contacto remitente, List<Contacto> Para) {
         this.asunto = asunto;
         this.contenido = contenido;
         this.remitente = remitente;
-        this.destinatarios = destinatarios;
+        this.Para = Para;
     }
 
     void getEmail(){
@@ -27,16 +27,13 @@ public class Email {
         this.remitente = remitente;
     }
 
-    public void enviarEmail(Contacto remitente,List<String> destinatarios) {
-       
-        remitente.guardarEnBandejaSalida();
- 
+    public void enviarEmail() {
+        // Guardar el correo en la bandeja de salida del remitente
+        remitente.guardarEnBandejaSalida(this);
 
+        // Guardar el correo en la bandeja de entrada de los destinatarios
+        for (Contacto destinatario : Para) {
+            destinatario.guardarEnBandejaEntrada(this);
+        }
     }
-
-
-
-
-
-
 }

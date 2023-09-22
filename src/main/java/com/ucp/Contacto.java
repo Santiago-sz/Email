@@ -7,12 +7,12 @@ public class Contacto {
     private String name = "";
     private String apellido = "";
     private String emailS ="";
-    private List<String> bandejaEntrada;
-    private List<String> bandejaSalida;
+    private List<Email> bandejaEntrada;
+    private List<Email> bandejaSalida;
 
 
 
-    public Contacto(String name,String apellido,String emailS, List<String> bandejaSalida, List<String> bandejaEnatrada){
+    public Contacto(String name,String apellido,String emailS, List<Email> bandejaSalida, List<Email> bandejaEnatrada){
         this.name = name;
         this.apellido = apellido;
         this.emailS = emailS;
@@ -24,7 +24,7 @@ public class Contacto {
         return;
     }
 
-    void setContactos(String name,String apellido,String emailS, List<String> bandejaSalida, List<String> bandejaEnatrada){
+    void setContactos(String name,String apellido,String emailS, List<Email> bandejaSalida, List<Email> bandejaEnatrada){
         this.name = name;
         this.apellido = apellido;
         this.emailS = emailS;
@@ -33,13 +33,17 @@ public class Contacto {
     }
 
      // Método para guardar un email en la bandeja de entrada
-     public void guardarEnBandejaEntrada(String email) {
+     public void guardarEnBandejaEntrada(Email email) {
         bandejaEntrada.add(email);
     }
 
     // Método para guardar un email en la bandeja de salida
-    public void guardarEnBandejaSalida(String email) {
+    public void guardarEnBandejaSalida(Email email) {
         bandejaSalida.add(email);
     }
+
+
+
+
 
 }
