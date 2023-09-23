@@ -1,18 +1,19 @@
 package com.ucp;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Contacto {
     
-    private String name = "";
-    private String apellido = "";
-    private String emailS ="";
+    private String name = " ";
+    private String apellido = " ";
+    private String emailS =" ";
     private List<Email> bandejaEntrada;
     private List<Email> bandejaSalida;
 
 
 
-    public Contacto(String name,String apellido,String emailS, List<Email> bandejaSalida, List<Email> bandejaEnatrada){
+    public Contacto(String name , String apellido , String emailS , List<Email> bandejaSalida, List<Email> bandejaEnatrada){
         this.name = name;
         this.apellido = apellido;
         this.emailS = emailS;
@@ -20,8 +21,24 @@ public class Contacto {
         this.bandejaSalida = bandejaSalida;
     }
     
+    public Contacto(){
+        
+    }
+    
+    public String getName() {
+        return name;
+    }
+
+    public List<Email> getBandejaSalida() {
+        return bandejaSalida;
+    }
+
+    public List<Email> getBandejaEntrada() {
+        return bandejaEntrada;
+    }
+
     void getContacto(){
-        return;
+    return;
     }
 
     void setContactos(String name,String apellido,String emailS, List<Email> bandejaSalida, List<Email> bandejaEnatrada){
@@ -42,8 +59,12 @@ public class Contacto {
         bandejaSalida.add(email);
     }
 
-
-
-
+        public Contacto(String name, String apellido, String emailS) {
+        this.name = name;
+        this.apellido = apellido;
+        this.emailS = emailS;
+        this.bandejaEntrada = new ArrayList<>();
+        this.bandejaSalida = new ArrayList<>();
+    }
 
 }

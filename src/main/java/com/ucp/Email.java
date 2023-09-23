@@ -16,6 +16,10 @@ public class Email {
         this.remitente = remitente;
         this.Para = Para;
     }
+     public Email(){
+
+     }
+
 
     void getEmail(){
         return ;

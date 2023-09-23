@@ -8,6 +8,13 @@
             "type": "java",
             "name": "Main",
             "request": "launch",
+            "mainClass": "com.ucp.Main",
+            "projectName": "Tetris"
+        },
+        {
+            "type": "java",
+            "name": "Main",
+            "request": "launch",
             "mainClass": "com.ucp.tetris.Main",
             "projectName": "Tetris"
         },
