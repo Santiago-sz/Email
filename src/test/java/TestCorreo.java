@@ -6,7 +6,7 @@ import java.util.List;
 import org.junit.Test;
 
 import com.ucp.Contacto;
-import com.ucp.Email;
+import com.ucp.Correo;
 
 
 public class TestEmail {
@@ -31,8 +31,8 @@ public class TestEmail {
       para.add(contacto2);
 
       // Crear un objeto de tipo Email con asunto, contenido, remitente y destinatarios
-      Email email = new Email("Asunto del Email", "Contenido del Email", contacto1, para);
-      Email email1 = new Email();
+      Correo email = new Correo("Asunto del Email", "Contenido del Email", contacto1, para);
+      Correo email1 = new Correo();
 
       assertNotEquals(email,email1);
    }
@@ -47,7 +47,7 @@ public class TestEmail {
       destinatarios.add(contacto2);
 
       // Crear un objeto de tipo Email con asunto, contenido, remitente y destinatarios
-      Email email = new Email("Asunto del Email", "Contenido del Email", contacto1, destinatarios);
+      Correo email = new Correo("Asunto del Email", "Contenido del Email", contacto1, destinatarios);
 
       email.enviarEmail();
 

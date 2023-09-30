@@ -2,42 +2,53 @@ package com.ucp;
 
 import java.util.List;
 
-public class Email {
+public class Correo {
 
     private String asunto = "";
     private String contenido = "";
     private Contacto remitente;
+
     private List<Contacto> Para;
 
 
-    public Email(String asunto, String contenido, Contacto remitente, List<Contacto> Para) {
-        this.asunto = asunto;
-        this.contenido = contenido;
-        this.remitente = remitente;
-        this.Para = Para;
-    }
-     public Email(){
-
-     }
-
-
-    void getEmail(){
-        return ;
-    }
-
-    void setEmail(Contacto remitente, String asunto, String contenido) {
+    public Correo(String asunto, String contenido, Contacto remitente) {
         this.asunto = asunto;
         this.contenido = contenido;
         this.remitente = remitente;
     }
 
-    public void enviarEmail() {
-        // Guardar el correo en la bandeja de salida del remitente
-        remitente.guardarEnBandejaSalida(this);
-
-        // Guardar el correo en la bandeja de entrada de los destinatarios
-        for (Contacto destinatario : Para) {
-            destinatario.guardarEnBandejaEntrada(this);
-        }
+     public Correo(){
     }
+
+    public String getAsunto() {
+        return asunto;
+    }
+
+    public void setAsunto(){
+         this.asunto = asunto;
+    }
+
+    public void getRemitente(){
+    return ;
+    }
+
+     public void setRemitente(){
+         this.remitente = remitente;
+    }
+
+    public String getContenido() {
+        return contenido;
+    }
+    public void setContenido(){
+         this.contenido = contenido;
+    }
+
+
+
+    public void setCorreo(String asunto, String contenido, Contacto remitente) {
+        this.asunto = asunto;
+        this.contenido = contenido;
+        this.remitente = remitente;
+    }
+    
 }
