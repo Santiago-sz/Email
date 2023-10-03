@@ -29,4 +29,5 @@ public class TestFilter {
         for (Correo correo : correosFiltrados) {
             System.out.println("Asunto: " + correo.getAsunto() + ", Remitente: " + correo.getRemitente());
         }
-    }}
+    }
+}

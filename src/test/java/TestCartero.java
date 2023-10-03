@@ -11,7 +11,7 @@ import com.ucp.Correo;
 public class TestCartero {
     
     @Test
-    public void testCrearBuzon() {
+    public void testEmailCartero() {
     Cartero cartero = new Cartero();
     Buzon buzon = new Buzon("correo@example.com", new ArrayList<>(), new ArrayList<>());
     Buzon buzon2 = new Buzon("correo1@example.com", new ArrayList<>(), new ArrayList<>());
@@ -24,7 +24,7 @@ public class TestCartero {
     }
 
     @Test
-    public void testCrearBuzon1() {
+    public void testenviarEmailCartero1() {
         Cartero cartero = new Cartero();
         Buzon buzon = new Buzon("correo@example.com", new ArrayList<>(), new ArrayList<>());
         Buzon buzon2 = new Buzon("correo1@example.com", new ArrayList<>(), new ArrayList<>());
