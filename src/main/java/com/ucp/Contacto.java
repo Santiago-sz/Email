@@ -1,5 +1,7 @@
 package com.ucp;
 
+import java.util.List;
+
 public class Contacto {
     
     private String name = " ";
@@ -43,6 +45,10 @@ public class Contacto {
         this.name = name;
         this.apellido = apellido;
         this.email = email;
+    }
+
+    public List<Contacto> getBandejaSalida() {
+        return null;
     }
 
     }
