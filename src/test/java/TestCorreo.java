@@ -21,57 +21,54 @@ public class TestCorreo {
       para.add(buzon);
       para.add(buzon2);
 
-      Correo email = new Correo("Asunto del Email", "Contenido del Email",buzon, para);
+      Correo correo1 = new Correo("Asunto 1", "Contenido 1", "correo@example.com", "correo1@example.com");
       Correo email1 = new Correo();
 
-      assertNotEquals(email,email1);
+      assertNotEquals(correo1,email1);
    }
 
    @Test
    public void TestCreateEmailpara() {
-       
-      Buzon buzon = new Buzon("correo@example.com", null, null);
       Correo email1 = new Correo();
-      Correo email = new Correo("Asunto del Email", "Contenido del Email",buzon, buzon);
+      Correo correo1 = new Correo("Asunto 1", "Contenido 1", "correo@example.com", "correo1@example.com");
 
-       assertNotEquals(email,email1);
+       assertNotEquals(correo1,email1);
    }
 
    @Test
    public void TestCreateEmail2() {
-       
-      Buzon buzon = new Buzon("correo@example.com", null, null);
-      Buzon buzon1 = new Buzon("correo@example.com", null, null);
+      Buzon buzon1 = new Buzon("correo1@example.com", null, null);
       Buzon buzon2 = new Buzon("correo@example.com", null, null);
       Buzon buzon3 = new Buzon("correo@example.com", null, null);
 
-      Correo email = new Correo("Asunto del Email", "Contenido del Email",buzon, buzon);
+      Correo correo1 = new Correo("Asunto 1", "Contenido 1", "correo@example.com", "correo1@example.com");
       List<Buzon> para = new ArrayList<>();
 
       para.add(buzon1);
       para.add(buzon2);
       para.add(buzon3);
 
-      Correo email1 = new Correo("Asunto del Email", "Contenido del Email",buzon, para);
+      Correo correo2 = new Correo("Asunto 1", "Contenido 1", "correo@example.com", "correo1@example.com");
 
 
-       assertNotEquals(email,email1);
+       assertNotEquals(correo1,correo2);
    }
+   
    @Test
    public void testCrearEmailAsunto() {
 
        Buzon buzon = new Buzon("correo@example.com", null, null);
-       Correo email = new Correo("Asunto del Email", "Contenido del Email",buzon, buzon);
+       Correo correo1 = new Correo("Asunto 1", "Contenido 1", "correo@example.com", "correo1@example.com");
 
-       assertEquals("Asunto del Email",email.getAsunto());
+       assertEquals("Asunto 1",correo1.getAsunto());
    }
    @Test
    public void testCrearEmailcontenido() {
 
        Buzon buzon = new Buzon("correo@example.com", null, null);
-       Correo email = new Correo("Asunto del Email", "Contenido del Email",buzon, buzon);
+      Correo correo1 = new Correo("Asunto 1", "Contenido 1", "correo@example.com", "correo1@example.com");
 
-       assertEquals("Contenido del Email",email.getContenido());
+       assertEquals("Contenido 1",correo1.getContenido());
    }
 
 }

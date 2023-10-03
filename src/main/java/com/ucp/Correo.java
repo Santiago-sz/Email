@@ -7,25 +7,25 @@ public class Correo {
 
     private String asunto = "";
     private String contenido = "";
-    private Buzon remitente;
-    private List<Buzon> para;
+    private String remitente;
+    private List<String> para;
 
 
-    public Correo(String asunto, String contenido, Buzon remitente, Buzon paraUnico) {
+    public Correo(String asunto, String contenido, String remitente, String paraUnico) {
         this.asunto = asunto;
         this.contenido = contenido;
         this.remitente = remitente;
         this.para = new ArrayList<>();
         this.para.add(paraUnico);
     }
-     public Correo(String asunto, String contenido, Buzon remitente, List<Buzon> paraVarios) {
+     public Correo(String asunto, String contenido, String remitente, List<String> paraVarios) {
         this.asunto = asunto;
         this.contenido = contenido;
         this.remitente = remitente;
         this.para = new ArrayList<>();
         this.para = paraVarios;
     }
-        public Correo(String asunto, String contenido, Buzon remitente) {
+        public Correo(String asunto, String contenido,String remitente) {
         this.asunto = asunto;
         this.contenido = contenido;
         this.remitente = remitente;
@@ -34,7 +34,7 @@ public class Correo {
      public Correo(){
     }
 
-    public List<Buzon> getPara() {
+    public List<String> getPara() {
         return para;
     }
     
@@ -43,7 +43,7 @@ public class Correo {
     }
 
 
-    public Buzon getRemitente(){
+    public String getRemitente(){
     return remitente;
     }
 

@@ -6,7 +6,6 @@ import java.util.List;
 
 import org.junit.Test;
 
-import com.ucp.Buzon;
 import com.ucp.Correo;
 import com.ucp.Filter;
 
@@ -15,11 +14,10 @@ public class TestFilter {
    public void TestFilter1() {
      List<Correo> correos = new ArrayList<>();
         Filter filtro = new Filter();
-        Buzon buzon = new Buzon("correo@example.com", null, null);
 
-        Correo correo1 = new Correo("Oferta especial", "Hola, tenemos una oferta especial para ti", buzon);
-        Correo correo2 = new Correo("Important", "Por favor, revisa este mensaje importante", buzon);
-        Correo correo3 = new Correo("Reunión", "Reunión programada para el próximo martes", buzon);
+        Correo correo1 = new Correo("Asunto 1", "Contenido 1", "correo@example.com", "correo1@example.com");
+        Correo correo2 = new Correo("oferta", "oferta", "correo@example.com", "correo1@example.com");
+        Correo correo3 = new Correo("importante", "Contenido 1", "correo@example.com", "correo@example.com");
 
         correos.add(correo1);
         correos.add(correo3);
@@ -31,8 +29,8 @@ public class TestFilter {
 
         assertNotNull(correosFiltrados);
         assertEquals(2, correosFiltrados.size());
-        assertEquals("Oferta especial", correosFiltrados.get(0).getAsunto());
-        assertEquals("Important", correosFiltrados.get(1).getAsunto());
+        assertEquals("importante", correosFiltrados.get(0).getAsunto());
+        assertEquals("oferta", correosFiltrados.get(1).getAsunto());
     }
 }
 

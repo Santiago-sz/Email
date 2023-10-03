@@ -19,7 +19,7 @@ public class Filter {
     }
 
     private boolean contienePalabraClave(Correo correo, List<String> palabrasClave) {
-        String contenidoCorreo = correo.getAsunto() + " " + correo.getContenido() + " " + correo.getRemitente().getEmailInterno();
+        String contenidoCorreo = correo.getAsunto() + " " + correo.getContenido() + " " + correo.getRemitente();
         for (String palabraClave : palabrasClave) {
             if (contenidoCorreo.toLowerCase().contains(palabraClave.toLowerCase())) {
                 return true;
@@ -64,7 +64,7 @@ public class Filter {
     }
 
     private boolean contienePalabraClaveEnRemitente(Correo correo, String palabraClave) {
-        return correo.getRemitente().getEmailInterno().toLowerCase().contains(palabraClave.toLowerCase());
+        return correo.getRemitente().toLowerCase().contains(palabraClave.toLowerCase());
     }
 
     private boolean contienePalabraClaveEnContenido(Correo correo, String palabraClave) {

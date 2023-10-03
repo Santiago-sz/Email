@@ -37,8 +37,8 @@ public class TestBuzon {
         Buzon buzon = new Buzon("correo@example.com", null, null);
         Buzon buzon2 = new Buzon("correo@example.com", null, null);
         
-        Correo correo1 = new Correo("Asunto 1", "Contenido 1", buzon, buzon2);
-        Correo correo2 = new Correo("Asunto 1", "Contenido 1", buzon, buzon2);
+        Correo correo1 = new Correo("Asunto 1", "Contenido 1", "correo@example.com", "correo1@example.com");
+        Correo correo2 = new Correo("Asunto 1", "Contenido 1", "correo@example.com", "correo1@example.com");
 
         // Agregar elementos a la bandeja de entrada
         buzon.getBandejaEntrada().add(correo1);
