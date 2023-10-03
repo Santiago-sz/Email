@@ -58,7 +58,7 @@ public class TestContacto {
     @Test
     public void TestCreateContacto5() {
     Contacto contacto = new Contacto();
-        contacto.setEmailS("juan.gonzalez@gmail.com");
+    contacto.setEmail("juan.gonzalez@gmail.com");
     assertEquals(" ", contacto.getName());
     assertEquals(" ", contacto.getApellido());
     assertEquals("juan.gonzalez@gmail.com", contacto.getEmail());

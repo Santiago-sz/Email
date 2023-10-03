@@ -37,31 +37,13 @@ public class Correo {
         return asunto;
     }
 
-    public void setAsunto(){
-         this.asunto = asunto;
-    }
 
     public Buzon getRemitente(){
     return remitente;
     }
 
-     public void setRemitente(){
-         this.remitente = remitente;
-    }
-
     public String getContenido() {
         return contenido;
-    }
-    public void setContenido(){
-         this.contenido = contenido;
-    }
-
-
-
-    public void setCorreo(String asunto, String contenido, Buzon remitente) {
-        this.asunto = asunto;
-        this.contenido = contenido;
-        this.remitente = remitente;
     }
     
 }

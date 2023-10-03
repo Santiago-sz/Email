@@ -37,7 +37,7 @@ public class Contacto {
         return email;
     }
 
-    public void setEmailS(String email){
+    public void setEmail(String email){
          this.email = email;
     }
 
