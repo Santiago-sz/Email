@@ -5,7 +5,7 @@ import java.util.List;
 
 public class Buzon {
 
-        private String emailInterno ="";
+        private String emailInterno =" ";
         private List<Correo> bandejaEntrada ;
         private List<Correo> bandejaSalida ;
 
