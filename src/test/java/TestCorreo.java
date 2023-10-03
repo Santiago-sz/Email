@@ -9,7 +9,7 @@ import com.ucp.Contacto;
 import com.ucp.Correo;
 
 
-public class TestEmail {
+public class TestCorreo {
   
 
    @Test

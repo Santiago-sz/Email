@@ -22,7 +22,7 @@ public class TestContacto {
       
     assertEquals("Juan", contacto.getName());
     assertEquals("González", contacto.getApellido());
-    assertEquals("juan.gonzalez@gmail.com", contacto.getEmailS());
+    assertEquals("juan.gonzalez@gmail.com", contacto.getEmail());
    }
 
     @Test
@@ -32,7 +32,7 @@ public class TestContacto {
 
     assertEquals(" ", contacto.getName());
     assertEquals(" ", contacto.getApellido());
-    assertEquals(" ", contacto.getEmailS());
+    assertEquals(" ", contacto.getEmail());
     }
 
     @Test
@@ -42,7 +42,7 @@ public class TestContacto {
         contacto.setName("juan");
     assertEquals("juan", contacto.getName());
     assertEquals(" ", contacto.getApellido());
-    assertEquals(" ", contacto.getEmailS());
+    assertEquals(" ", contacto.getEmail());
     }
 
     @Test
@@ -52,7 +52,7 @@ public class TestContacto {
         contacto.setApellido("González");
     assertEquals(" ", contacto.getName());
     assertEquals("González", contacto.getApellido());
-    assertEquals(" ", contacto.getEmailS());
+    assertEquals(" ", contacto.getEmail());
     }
 
     @Test
@@ -61,7 +61,7 @@ public class TestContacto {
         contacto.setEmailS("juan.gonzalez@gmail.com");
     assertEquals(" ", contacto.getName());
     assertEquals(" ", contacto.getApellido());
-    assertEquals("juan.gonzalez@gmail.com", contacto.getEmailS());
+    assertEquals("juan.gonzalez@gmail.com", contacto.getEmail());
     }
 
 

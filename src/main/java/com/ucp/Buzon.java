@@ -5,17 +5,14 @@ import java.util.List;
 
 public class Buzon {
 
-        private String emailS ="";
+        private String emailInterno ="";
         private List<Correo> bandejaEntrada ;
         private List<Correo> bandejaSalida ;
 
-        public Buzon(){
-        }
-
-        public Buzon (String emailS,List<Correo> bandejaEntrada,List<Correo> bandejaSalida){
-        this.emailS = emailS;
-        this.bandejaEntrada = bandejaEntrada = new ArrayList<>();
-        this.bandejaSalida =bandejaSalida = new ArrayList<>();   
+        public Buzon (String emailInterno,List<Correo> bandejaEntrada,List<Correo> bandejaSalida){
+        this.emailInterno = emailInterno;
+        this.bandejaEntrada = new ArrayList<>();
+        this.bandejaSalida = new ArrayList<>();   
     }
 
         public List<Correo> getBandejaSalida() {
@@ -26,8 +23,8 @@ public class Buzon {
             return bandejaEntrada;
         }
 
-        public String getEmailS(){
-            return emailS;
+        public String getEmailInterno(){
+            return emailInterno;
         }
 
 

@@ -4,17 +4,18 @@ public class Contacto {
     
     private String name = " ";
     private String apellido = " ";
-    private String emailS =" ";
+    private String email =" ";
 
     public Contacto(String name , String apellido , String emailS){
         this.name = name;
         this.apellido = apellido;
-        this.emailS = emailS;
+        this.email = emailS;
     }
     
     public Contacto(){
     }
-    
+
+
     public String getName() {
         return name;
     }
@@ -30,18 +31,18 @@ public class Contacto {
          this.apellido = apellido;
     }
 
-    public String getEmailS() {
-        return emailS;
+    public String getEmail() {
+        return email;
     }
 
-    public void setEmailS(String emailS){
-         this.emailS = emailS;
+    public void setEmailS(String email){
+         this.email = email;
     }
 
-    public void setContacto(String name, String apellido, String emailS){
+    public void setContacto(String name, String apellido, String email){
         this.name = name;
         this.apellido = apellido;
-        this.emailS = emailS;
+        this.email = email;
     }
 
     }

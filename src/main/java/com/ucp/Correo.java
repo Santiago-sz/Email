@@ -1,25 +1,38 @@
 package com.ucp;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Correo {
 
     private String asunto = "";
     private String contenido = "";
-    private Contacto remitente;
+    private Buzon remitente;
+    private List<Buzon> para;
 
-    private List<Contacto> Para;
 
-
-    public Correo(String asunto, String contenido, Contacto remitente) {
+    public Correo(String asunto, String contenido, Buzon remitente, Buzon paraUnico) {
         this.asunto = asunto;
         this.contenido = contenido;
         this.remitente = remitente;
+        this.para = new ArrayList<>();
+        this.para.add(paraUnico);
+    }
+     public Correo(String asunto, String contenido, Buzon remitente, List<Buzon> paraVarios) {
+        this.asunto = asunto;
+        this.contenido = contenido;
+        this.remitente = remitente;
+        this.para = new ArrayList<>();
+        this.para = paraVarios;
     }
 
      public Correo(){
     }
 
+    public List<Buzon> getPara() {
+        return para;
+    }
+    
     public String getAsunto() {
         return asunto;
     }
@@ -28,8 +41,8 @@ public class Correo {
          this.asunto = asunto;
     }
 
-    public void getRemitente(){
-    return ;
+    public Buzon getRemitente(){
+    return remitente;
     }
 
      public void setRemitente(){
@@ -45,7 +58,7 @@ public class Correo {
 
 
 
-    public void setCorreo(String asunto, String contenido, Contacto remitente) {
+    public void setCorreo(String asunto, String contenido, Buzon remitente) {
         this.asunto = asunto;
         this.contenido = contenido;
         this.remitente = remitente;

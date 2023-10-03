@@ -19,24 +19,21 @@ public class TestBuzon {
 
     }
 
-
      @Test
     public void testCrearBuzon2() {
 
         Buzon buzon = new Buzon("correo@example.com", null, null);
 
-        assertEquals("correo@example.com",buzon.getEmailS());
-
+        assertEquals("correo@example.com",buzon.getEmailInterno());
     }
 
     @Test
     public void testAgregarElementos() {
-        // Crear una instancia de Buzon
         Buzon buzon = new Buzon("correo@example.com", null, null);
-
-        // Crear instancias de Correo
-        Correo correo1 = new Correo("Asunto 1", "Contenido 1", null);
-        Correo correo2 = new Correo("Asunto 2", "Contenido 2", null);
+        Buzon buzon2 = new Buzon("correo@example.com", null, null);
+        
+        Correo correo1 = new Correo("Asunto 1", "Contenido 1", buzon, buzon2);
+        Correo correo2 = new Correo("Asunto 1", "Contenido 1", buzon, buzon2);
 
         // Agregar elementos a la bandeja de entrada
         buzon.getBandejaEntrada().add(correo1);
@@ -52,9 +49,5 @@ public class TestBuzon {
         assertTrue(buzon.getBandejaEntrada().contains(correo2)); // La bandeja de entrada debe contener correo2
         assertTrue(buzon.getBandejaSalida().contains(correo1)); // La bandeja de enviados debe contener correo1
     }
-
-
-
-
 
 }
