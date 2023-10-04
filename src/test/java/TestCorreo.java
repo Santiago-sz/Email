@@ -57,7 +57,6 @@ public class TestCorreo {
    @Test
    public void testCrearEmailAsunto() {
 
-       Buzon buzon = new Buzon("correo@example.com", null, null);
        Correo correo1 = new Correo("Asunto 1", "Contenido 1", "correo@example.com", "correo1@example.com");
 
        assertEquals("Asunto 1",correo1.getAsunto());
@@ -65,7 +64,6 @@ public class TestCorreo {
    @Test
    public void testCrearEmailcontenido() {
 
-       Buzon buzon = new Buzon("correo@example.com", null, null);
       Correo correo1 = new Correo("Asunto 1", "Contenido 1", "correo@example.com", "correo1@example.com");
 
        assertEquals("Contenido 1",correo1.getContenido());

@@ -35,7 +35,6 @@ public class TestBuzon {
     @Test
     public void testAgregarElementos() {
         Buzon buzon = new Buzon("correo@example.com", null, null);
-        Buzon buzon2 = new Buzon("correo@example.com", null, null);
         
         Correo correo1 = new Correo("Asunto 1", "Contenido 1", "correo@example.com", "correo1@example.com");
         Correo correo2 = new Correo("Asunto 1", "Contenido 1", "correo@example.com", "correo1@example.com");
