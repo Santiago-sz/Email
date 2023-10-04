@@ -14,7 +14,7 @@ public class TestBuzon {
 
        assertNotNull(buzon);
     }
-     @Test
+    @Test
     public void testCrearBuzon() {
 
         Buzon buzon = new Buzon("correo@example.com", null, null);
@@ -53,5 +53,4 @@ public class TestBuzon {
         assertTrue(buzon.getBandejaEntrada().contains(correo2));
         assertTrue(buzon.getBandejaSalida().contains(correo1));
     }
-
 }
