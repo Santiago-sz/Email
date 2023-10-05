@@ -7,14 +7,13 @@ import java.util.Optional;
 public class Cartero {
 
     private List<Buzon> buzones = new ArrayList<>();
-    private Correo email;
+    
  
     public Cartero(){
     }
 
-    public Cartero(List<Buzon> buzones, Correo email) {
+    public Cartero(List<Buzon> buzones) {
         this.buzones = new ArrayList<>(buzones);
-        this.email = email;
     }
 
     public void agregarbuzones(Buzon usuario){
@@ -28,9 +27,6 @@ public class Cartero {
 
     }
 
-    public Correo getEmail() {
-        return email;
-    }
 
     public void setPara(List<Buzon> para) {
         this.buzones = para;
