@@ -7,13 +7,13 @@ import java.util.List;
 import org.junit.Test;
 
 import com.ucp.Correo;
-import com.ucp.Filter;
+import com.ucp.FilterContenido;
 
 public class TestFilterContenido {
     @Test
     public void TestPorContenido() {
      List<Correo> correos = new ArrayList<>();
-     Filter filtro = new Filter();
+     FilterContenido filtro = new FilterContenido();
  
      Correo correo1 = new Correo("Asunto 1", "Contenido 1", "correo@example.com", "correo1@example.com");
      Correo correo2 = new Correo("oferta", "oferta", "correo@example.com", "correo1@example.com");

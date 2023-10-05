@@ -68,5 +68,20 @@ public class TestCorreo {
 
        assertEquals("Contenido 1",correo1.getContenido());
    }
+   @Test
+   public void testCrearEmailParaVarios() {
 
+      List<String> para = new ArrayList<>();
+      
+      para.add("correo1@example.com");
+      para.add("correo@example.com");
+      para.add("estenoesuncorreo@example.com");
+      para.add("tuex@");
+
+
+      Correo correo1 = new Correo("Asunto 1", "Contenido 1", "correo@example.com", para);
+
+      
+      assertEquals(4,correo1.getPara().size());
+   }
 }

@@ -31,5 +31,6 @@ public class TestFilterRemitente {
         assertNotNull(correosFiltrados);
         assertEquals(3, correosFiltrados.size());
     }
+    
 }
 
