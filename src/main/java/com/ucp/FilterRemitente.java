@@ -3,7 +3,7 @@ package com.ucp;
 import java.util.ArrayList;
 import java.util.List;
 
-public abstract class FilterRemitente {
+public class FilterRemitente {
 
     public List<Correo> filtrarPorRemitente(List<Correo> correos, String palabraClave) {
         List<Correo> correosFiltrados = new ArrayList<>();

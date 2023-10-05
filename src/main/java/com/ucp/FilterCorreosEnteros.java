@@ -3,7 +3,7 @@ package com.ucp;
 import java.util.ArrayList;
 import java.util.List;
 
-public class FiltrarCorreosEnteros {
+public class FilterCorreosEnteros {
        public List<Correo> filtrarCorreos(List<Correo> correos, List<String> palabrasClave) {
         List<Correo> correosFiltrados = new ArrayList<>();
 
