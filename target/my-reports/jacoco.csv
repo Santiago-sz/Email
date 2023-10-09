@@ -1,0 +1,10 @@
+GROUP,PACKAGE,CLASS,INSTRUCTION_MISSED,INSTRUCTION_COVERED,BRANCH_MISSED,BRANCH_COVERED,LINE_MISSED,LINE_COVERED,COMPLEXITY_MISSED,COMPLEXITY_COVERED,METHOD_MISSED,METHOD_COVERED
+email,com.ucp,Cartero,0,92,0,2,0,22,0,10,0,9
+email,com.ucp,FilterAsuntoContenidos,0,67,2,6,0,13,2,6,0,4
+email,com.ucp,Buzon,0,28,0,0,0,9,0,4,0,4
+email,com.ucp,FilterCorreosEnteros,0,79,4,8,0,17,4,6,0,4
+email,com.ucp,FilterAsunto,0,51,0,0,0,9,0,4,0,4
+email,com.ucp,Correo,0,75,0,0,0,22,0,7,0,7
+email,com.ucp,FilterContenido,0,51,0,0,0,9,0,4,0,4
+email,com.ucp,FilterRemitente,0,51,0,0,0,9,0,4,0,4
+email,com.ucp,Contacto,0,82,0,4,0,28,0,12,0,10

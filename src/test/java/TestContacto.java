@@ -116,7 +116,4 @@ public class TestContacto {
     assertEquals("juan.gonzalez@gmail.com", contacto.getEmail());
     }
 
-
-
-
 }

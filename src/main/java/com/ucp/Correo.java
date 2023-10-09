@@ -25,13 +25,8 @@ public class Correo {
         this.para = new ArrayList<>();
         this.para = paraVarios;
     }
-        public Correo(String asunto, String contenido,String remitente) {
-        this.asunto = asunto;
-        this.contenido = contenido;
-        this.remitente = remitente;
-    }
 
-     public Correo(){
+    public Correo(){
     }
 
     public List<String> getPara() {

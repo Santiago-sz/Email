@@ -12,7 +12,7 @@ public class Buzon {
         public Buzon (String emailInterno,List<Correo> bandejaEntrada,List<Correo> bandejaSalida){
         this.emailInterno = emailInterno;
         this.bandejaEntrada = new ArrayList<>();
-        this.bandejaSalida = new ArrayList<>();   //automatico el insertar buzon en cartero 
+        this.bandejaSalida = new ArrayList<>();    
     }
 
         public List<Correo> getBandejaSalida() {
@@ -26,5 +26,4 @@ public class Buzon {
         public String getEmailInterno(){
             return emailInterno;
         }
-
 }

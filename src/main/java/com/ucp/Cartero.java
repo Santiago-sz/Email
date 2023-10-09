@@ -7,13 +7,12 @@ import java.util.Optional;
 public class Cartero {
 
     private List<Buzon> buzones = new ArrayList<>();
-    
- 
+   
     public Cartero(){
     }
 
     public Cartero(List<Buzon> buzones) {
-        this.buzones = new ArrayList<>(buzones);
+        this.buzones = buzones;
     }
 
     public void agregarbuzones(Buzon usuario){
@@ -23,18 +22,8 @@ public class Cartero {
     public List<Buzon> getPara() {
         return buzones;
     }
-    public void getCorreo(){
-
-    }
-
-
-    public void setPara(List<Buzon> para) {
-        this.buzones = para;
-    }
-
 
     public void enviarEmail(Correo email) {
-            // Obtener el remitente del correo
             String remitenteEmail = email.getRemitente();
     
             // Buscar el remitente en los buzones
@@ -58,5 +47,5 @@ public class Cartero {
                 buzonDestinatario.ifPresent(destinatario -> destinatario.getBandejaEntrada().add(email));
             }
         }
-    }
+}
 

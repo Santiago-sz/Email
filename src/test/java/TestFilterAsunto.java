@@ -5,59 +5,67 @@ import java.util.List;
 
 import org.junit.Test;
 
+import com.ucp.Buzon;
+import com.ucp.Cartero;
 import com.ucp.Correo;
 import com.ucp.FilterAsunto;
 
 public class TestFilterAsunto {
-    @Test 
-    public void TestPorAsunto() {
-     List<Correo> correos = new ArrayList<>();
-     FilterAsunto filtro = new FilterAsunto();
- 
-     Correo correo1 = new Correo("Asunto 1", "Contenido 1", "correo@example.com", "correo1@example.com");
-     Correo correo2 = new Correo("oferta", "Contenido 1", "correo@example.com", "correo1@example.com");
-     Correo correo3 = new Correo("importante", "Contenido 1", "correo@example.com", "correo@example.com");
- 
-     correos.add(correo1);
-     correos.add(correo3);
-     correos.add(correo2);
- 
-     String palabraClave = "oferta"; 
- 
-     List<Correo> correosFiltrados = filtro.filtrarPorAsunto(correos, palabraClave);
-     
 
-        assertNotNull(correosFiltrados);
-        assertEquals(1, correosFiltrados.size());
-        assertEquals("oferta", correosFiltrados.get(0).getAsunto());
-    }
     @Test
-    public void TestPorAsuntoVarios() {
-        List<Correo> correos = new ArrayList<>();
-        FilterAsunto filtro = new FilterAsunto();
-        Correo correo1 = null; // Declarar correo1 fuera del bucle
-    
-        for (int i = 0; i < 10; i++) {
-            int numero = 1; 
-            String numeroComo = "" + numero; 
-            correo1 = new Correo(numeroComo, numeroComo, numeroComo + "@example.com", numeroComo + "@example.com");
-            correos.add(correo1);
-        }
-    
-        // Ahora puedes agregar correos1 (que fue creado fuera del bucle) a la lista correos varias veces
-        correos.add(correo1);
-        correos.add(correo1);
-        correos.add(correo1);
+public void TestPorAsuntoVarios() {
+
+    Buzon buzon = new Buzon("correo@example.com", null, null);
+    FilterAsunto filtro = new FilterAsunto();
+    Correo correo1 = new Correo("Asunto 1", "Contenido 1", "correo@example.com", "correo1@example.com");
+    Correo correo2 = new Correo("Asunto 2", "Contenido 1", "correo@example.com", "correo1@example.com");
+    Correo correo3 = new Correo("Asunto 1", "Contenido 1", "correo@example.com", "correo1@example.com");
+
+    buzon.getBandejaEntrada().add(correo1);
+    buzon.getBandejaEntrada().add(correo2);
+    buzon.getBandejaEntrada().add(correo3);
+   
+
+    String palabraClave = "1";
+
+    List<Correo> correosFiltrados = filtro.filtrarPorAsunto(buzon, palabraClave);
+
+    assertNotNull(correosFiltrados);
+    assertEquals(2, correosFiltrados.size());
+    assertEquals("Asunto 1", correosFiltrados.get(0).getAsunto());
+}
+@Test
+    public void testEnviarYFiltrarPorAsunto() {
+        Cartero cartero = new Cartero();
+        Buzon buzon = new Buzon("correo@gmail.com", new ArrayList<>(), new ArrayList<>());
+         Buzon buzon2 = new Buzon("correo1@gmail.com", new ArrayList<>(), new ArrayList<>());
+
+        // Crear instancias de Correo
+        Correo correo1 = new Correo("Mascota vieja", "Perro negro", "correo@gmail.com", "correo1@gmail.com");
+        Correo correo2 = new Correo("Asunto 2", "Gato", "correo@gmail.com", "correo1@gmail.com");
+        Correo correo3 = new Correo("Mascota nueva", "Perro azul", "correo@gmail.com", "correo1@gmail.com");
+          Correo correo4 = new Correo("Saludo", "Perro azul", "correo@gmail.com", "correo1@gmail.com");
+
         
-        String palabraClave = "1"; 
-        List<Correo> correosFiltrados = filtro.filtrarPorAsunto(correos, palabraClave);
-    
-        assertNotNull(correosFiltrados);
-        assertEquals(13, correosFiltrados.size()); // Debería haber 13 correos en total (10 del bucle + 3 agregados después)
-        assertEquals("1", correosFiltrados.get(0).getAsunto());
+        cartero.agregarbuzones(buzon);
+         cartero.agregarbuzones(buzon2);
+
+      
+        cartero.enviarEmail(correo1);
+        cartero.enviarEmail(correo2);
+        cartero.enviarEmail(correo3);
+        cartero.enviarEmail(correo4);
+
+        FilterAsunto filtro = new FilterAsunto();
+        List<Correo> correosFiltrados = filtro.filtrarPorAsunto(buzon, "Mascota");
+        List<Correo> correosFiltrados1 = filtro.filtrarPorAsunto(buzon2, "Asunto 2");
+
+       
+        assertEquals(2, correosFiltrados.size());
+         assertEquals(1, correosFiltrados1.size());
+
      
     }
-
 
 
 }

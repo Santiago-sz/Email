@@ -2,19 +2,21 @@ package com.ucp;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class FilterRemitente {
+  public List<Correo> filtrarPorRemitente(Buzon buzon, String remitente) {
+        List<Correo> bandejaEntrada = buzon.getBandejaEntrada();
+        List<Correo> bandejaEnviados = buzon.getBandejaSalida();
 
-    public List<Correo> filtrarPorRemitente(List<Correo> correos, String palabraClave) {
+        List<Correo> correosFiltradosEntrada = bandejaEntrada.stream().filter(correo -> correo.getRemitente().contains(remitente)).collect(Collectors.toList());
+        
+        List<Correo> correosFiltradosEnviados = bandejaEnviados.stream().filter(correo -> correo.getRemitente().contains(remitente)).collect(Collectors.toList());
+
         List<Correo> correosFiltrados = new ArrayList<>();
-        for (Correo correo : correos) {
-            if (contienePalabraClaveEnRemitente(correo, palabraClave)) {
-                correosFiltrados.add(correo);
-            }
-        }
+        correosFiltrados.addAll(correosFiltradosEntrada);
+        correosFiltrados.addAll(correosFiltradosEnviados);
+
         return correosFiltrados;
-    }
-    private boolean contienePalabraClaveEnRemitente(Correo correo, String palabraClave) {
-        return correo.getRemitente().toLowerCase().contains(palabraClave.toLowerCase());
     }
 }

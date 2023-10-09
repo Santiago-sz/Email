@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="es"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Cartero.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">email</a> &gt; <a href="index.source.html" class="el_package">com.ucp</a> &gt; <span class="el_source">Cartero.java</span></div><h1>Cartero.java</h1><pre class="source lang-java linenums">package com.ucp;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Optional;
+
+public class Cartero {
+
+<span class="fc" id="L9">    private List&lt;Buzon&gt; buzones = new ArrayList&lt;&gt;();</span>
+   
+<span class="fc" id="L11">    public Cartero(){</span>
+<span class="fc" id="L12">    }</span>
+
+<span class="fc" id="L14">    public Cartero(List&lt;Buzon&gt; buzones) {</span>
+<span class="fc" id="L15">        this.buzones = buzones;</span>
+<span class="fc" id="L16">    }</span>
+
+    public void agregarbuzones(Buzon usuario){
+<span class="fc" id="L19">        buzones.add(usuario);</span>
+<span class="fc" id="L20">    }</span>
+
+    public List&lt;Buzon&gt; getPara() {
+<span class="fc" id="L23">        return buzones;</span>
+    }
+
+    public void enviarEmail(Correo email) {
+<span class="fc" id="L27">            String remitenteEmail = email.getRemitente();</span>
+    
+            // Buscar el remitente en los buzones
+<span class="fc" id="L30">            Optional&lt;Buzon&gt; buzonRemitente = buzones.stream()</span>
+<span class="fc" id="L31">                    .filter(buzon -&gt; buzon.getEmailInterno().equals(remitenteEmail))</span>
+<span class="fc" id="L32">                    .findFirst();</span>
+    
+            // Si se encuentra el buzon del remitente, agregar el correo a la bandeja de salida del remitente
+<span class="fc" id="L35">            buzonRemitente.ifPresent(remitente -&gt; remitente.getBandejaSalida().add(email));</span>
+    
+            // Obtener los destinatarios del correo como direcciones de correo electrónico
+<span class="fc" id="L38">            List&lt;String&gt; destinatarios = email.getPara();</span>
+    
+            // Para cada destinatario, encontrar el Buzon correspondiente y agregar el correo a su bandeja de entrada
+<span class="fc bfc" id="L41" title="All 2 branches covered.">            for (String destinatarioEmail : destinatarios) {</span>
+<span class="fc" id="L42">                Optional&lt;Buzon&gt; buzonDestinatario = buzones.stream()</span>
+<span class="fc" id="L43">                        .filter(buzon -&gt; buzon.getEmailInterno().equals(destinatarioEmail))</span>
+<span class="fc" id="L44">                        .findFirst();</span>
+                
+                // Si se encuentra el buzon del destinatario, agregar el correo a su bandeja de entrada
+<span class="fc" id="L47">                buzonDestinatario.ifPresent(destinatario -&gt; destinatario.getBandejaEntrada().add(email));</span>
+<span class="fc" id="L48">            }</span>
+<span class="fc" id="L49">        }</span>
+}
+
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.9.202303310957</span></div></body></html>

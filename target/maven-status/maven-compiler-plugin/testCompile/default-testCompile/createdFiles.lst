@@ -1,0 +1,9 @@
+TestCorreo.class
+TestFilterCorreosEnteros.class
+TestFilterContenido.class
+TestContacto.class
+TestAsuntoContenido.class
+TestCartero.class
+TestFilterAsunto.class
+TestBuzon.class
+TestFilterRemitente.class
