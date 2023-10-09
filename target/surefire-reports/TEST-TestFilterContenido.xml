@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="TestFilterContenido" time="0.001" tests="3" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="TestFilterContenido" time="0" tests="3" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.specification.version" value="17"/>
     <property name="sun.cpu.isalist" value="amd64"/>
     <property name="sun.jnu.encoding" value="Cp1252"/>
-    <property name="java.class.path" value="C:\Users\santi\Pictures\Email\target\test-classes;C:\Users\santi\Pictures\Email\target\classes;C:\Users\santi\.m2\repository\junit\junit\4.11\junit-4.11.jar;C:\Users\santi\.m2\repository\org\hamcrest\hamcrest-core\1.3\hamcrest-core-1.3.jar;"/>
+    <property name="java.class.path" value="C:\Users\santi\Documents\Email\Email\target\test-classes;C:\Users\santi\Documents\Email\Email\target\classes;C:\Users\santi\.m2\repository\junit\junit\4.11\junit-4.11.jar;C:\Users\santi\.m2\repository\org\hamcrest\hamcrest-core\1.3\hamcrest-core-1.3.jar;"/>
     <property name="java.vm.vendor" value="Eclipse Adoptium"/>
     <property name="sun.arch.data.model" value="64"/>
     <property name="user.variant" value=""/>
@@ -15,9 +15,9 @@
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="user.country" value="ES"/>
     <property name="sun.boot.library.path" value="C:\Users\santi\AppData\Local\Programs\Eclipse Adoptium\jdk-17.0.8.7-hotspot\bin"/>
-    <property name="sun.java.command" value="C:\Users\santi\AppData\Local\Temp\surefire6716614032870551613\surefirebooter4593393261753549616.jar C:\Users\santi\AppData\Local\Temp\surefire6716614032870551613 2023-10-09T00-08-53_746-jvmRun1 surefire18434562697903613213tmp surefire_017348205048863927823tmp"/>
+    <property name="sun.java.command" value="C:\Users\santi\AppData\Local\Temp\surefire13678048273503236247\surefirebooter9826031820216078298.jar C:\Users\santi\AppData\Local\Temp\surefire13678048273503236247 2023-10-09T00-53-18_119-jvmRun1 surefire12485039915097228265tmp surefire_02939666438156706689tmp"/>
     <property name="jdk.debug" value="release"/>
-    <property name="surefire.test.class.path" value="C:\Users\santi\Pictures\Email\target\test-classes;C:\Users\santi\Pictures\Email\target\classes;C:\Users\santi\.m2\repository\junit\junit\4.11\junit-4.11.jar;C:\Users\santi\.m2\repository\org\hamcrest\hamcrest-core\1.3\hamcrest-core-1.3.jar;"/>
+    <property name="surefire.test.class.path" value="C:\Users\santi\Documents\Email\Email\target\test-classes;C:\Users\santi\Documents\Email\Email\target\classes;C:\Users\santi\.m2\repository\junit\junit\4.11\junit-4.11.jar;C:\Users\santi\.m2\repository\org\hamcrest\hamcrest-core\1.3\hamcrest-core-1.3.jar;"/>
     <property name="sun.cpu.endian" value="little"/>
     <property name="user.home" value="C:\Users\santi"/>
     <property name="user.language" value="es"/>
@@ -25,12 +25,12 @@
     <property name="java.version.date" value="2023-07-18"/>
     <property name="java.home" value="C:\Users\santi\AppData\Local\Programs\Eclipse Adoptium\jdk-17.0.8.7-hotspot"/>
     <property name="file.separator" value="\"/>
-    <property name="basedir" value="C:\Users\santi\Pictures\Email"/>
+    <property name="basedir" value="C:\Users\santi\Documents\Email\Email"/>
     <property name="java.vm.compressedOopsMode" value="Zero based"/>
     <property name="line.separator" value="&#10;"/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
-    <property name="surefire.real.class.path" value="C:\Users\santi\AppData\Local\Temp\surefire6716614032870551613\surefirebooter4593393261753549616.jar"/>
+    <property name="surefire.real.class.path" value="C:\Users\santi\AppData\Local\Temp\surefire13678048273503236247\surefirebooter9826031820216078298.jar"/>
     <property name="user.script" value=""/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="java.runtime.version" value="17.0.8+7"/>
@@ -45,7 +45,7 @@
     <property name="java.vendor.url.bug" value="https://github.com/adoptium/adoptium-support/issues"/>
     <property name="java.io.tmpdir" value="C:\Users\santi\AppData\Local\Temp\"/>
     <property name="java.version" value="17.0.8"/>
-    <property name="user.dir" value="C:\Users\santi\Pictures\Email"/>
+    <property name="user.dir" value="C:\Users\santi\Documents\Email\Email"/>
     <property name="os.arch" value="amd64"/>
     <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
     <property name="sun.os.patch.level" value=""/>

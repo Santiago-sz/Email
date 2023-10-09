@@ -3,7 +3,9 @@ import static org.junit.Assert.*;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.junit.Rule;
 import org.junit.Test;
+import org.junit.rules.ExpectedException;
 
 import com.ucp.Buzon;
 import com.ucp.Correo;
@@ -84,4 +86,23 @@ public class TestCorreo {
       
       assertEquals(4,correo1.getPara().size());
    }
+   
+   @Test(expected = IllegalArgumentException.class)
+   public void testCorreoInvalido() {
+       new Correo("Asunto", "Contenido", "", new ArrayList<>());
+   }
+
+        @Rule
+    public ExpectedException exceptionRule = ExpectedException.none();
+
+      @Test
+    public void crearCorreoInvalido1() {
+        // Espera que se lance una excepción IllegalArgumentException con un mensaje específico
+        exceptionRule.expect(IllegalArgumentException.class);
+        exceptionRule.expectMessage("Correo electrónico inválido");
+
+        // Intenta crear un contacto con un correo electrónico inválido
+        Correo correo = new Correo("Asunto", "Contenido del correo", "", "destinatario@example.com");
+
+    }
 }

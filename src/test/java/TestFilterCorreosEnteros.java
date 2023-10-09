@@ -69,6 +69,7 @@ public class TestFilterCorreosEnteros {
         String remitente = correo.getRemitente();
         assertEquals("remitente@example.com", remitente);
     }
+
     @Test
     public void testGetContenido() {
         Correo correo = new Correo("Asunto", "Contenido del correo", "remitente@example.com", "destinatario@example.com");
