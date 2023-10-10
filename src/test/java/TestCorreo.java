@@ -8,6 +8,7 @@ import org.junit.Test;
 import org.junit.rules.ExpectedException;
 
 import com.ucp.Buzon;
+import com.ucp.Cartero;
 import com.ucp.Correo;
 
 
@@ -105,4 +106,26 @@ public class TestCorreo {
         Correo correo = new Correo("Asunto", "Contenido del correo", "", "destinatario@example.com");
 
     }
-}
+       @Test
+   public void TestCreateEmail100() {
+      Buzon buzon1 = new Buzon("correo@example.com", null, null);
+      Buzon buzon2 = new Buzon("correo@example.com", null, null);
+        Cartero cartero= new Cartero();
+    cartero.agregarbuzones(buzon1);
+
+
+      Correo correo1 = new Correo("Asunto 1", "Contenido 1", "correo@example.com", "correo@example.com");
+
+      for(int i=0;i<100;i++){
+        cartero.enviarEmail(correo1);
+      }
+
+      Correo correo2 = new Correo("Asunto 1", "Contenido 1", "correo1@example.com", "correo1@example.com");
+
+
+      assertEquals(100, buzon1.getBandejaSalida().size()); 
+       assertEquals(100, buzon1.getBandejaEntrada().size()); 
+   }
+
+   }
+   
